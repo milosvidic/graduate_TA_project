@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class MyProfilePage {
 	
 	
-	@FindBy(linkText = "ivecluj.1@endava.com")   
+	@FindBy(css = "a[href*= 'mailto']")   
 	private WebElement mailCheck;
 	
 	@FindBy(linkText = "Career Development Discussion")  
