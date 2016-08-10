@@ -26,7 +26,7 @@ public class MyAccount {
 	  message = myProfilePage.getEmail();
 	  System.out.println(message);
 
-	  assert message.equals(Property.email) : "Email address is not like expected";
+	  assert message.equals(myProfilePage.getEmail()) : "Email address is not like expected";
 
 	  System.out.println("test passed");
 	  
