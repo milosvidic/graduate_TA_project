@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import lib.data.Property;
 
-public class LoginPage {
+public class LoginPage extends  Page{
 
 	@FindBy(id = "username")
 	private WebElement usernameInputField;
@@ -24,11 +24,12 @@ public class LoginPage {
 	private WebDriver driver;
 	
 	public LoginPage(WebDriver driver){
+		super(driver);
 		this.driver = driver;
 		driver.manage().window().maximize();
 		driver.get(Property.URL);
 		PageFactory.initElements(driver, this);
-	
+	    
 		
 	}
 	
@@ -38,6 +39,7 @@ public class LoginPage {
 	 * @return {LoginPage}
 	 */
 	public LoginPage typeUsername(String username){
+		System.out.println("typeUsername()");
 		usernameInputField.sendKeys(username);
 		return this;
 		
@@ -50,6 +52,7 @@ public class LoginPage {
 	 */
 	
 	public LoginPage typePassword(String password){
+		System.out.println("typePassword()");
 		passwordInputField.sendKeys(password);
 		return this;
 	}
@@ -60,6 +63,7 @@ public class LoginPage {
 	 * @return {HomePage}
 	 */
 	public HomePage clickOnLoginButton(){
+		System.out.println("clickOnLoginButton()");
 		loginButton.click();
 		return new HomePage(driver);
 	}
@@ -68,6 +72,7 @@ public class LoginPage {
 	 * @return {String}
 	 */
 	public String getErrorMessage(){
+		System.out.println("getErrorMessage()");
 		return errorLabel.getText(); 
 	}
 	
@@ -76,6 +81,7 @@ public class LoginPage {
 	 * @return {LoginPage}
 	 */
 	public LoginPage clickOnLoginButtonInvalidData(){
+		System.out.println("clickOnLoginButtonInvalidData()");
 		loginButton.click();
 		return this;
 	}
@@ -85,6 +91,7 @@ public class LoginPage {
 	 * @return {LoginPage}
 	 */
 	public LoginPage clearUsernameAndPasswordFields(){
+		System.out.println("clearUsernameAndPasswordFields()");
 		usernameInputField.clear();
 		passwordInputField.clear();
 		return this;

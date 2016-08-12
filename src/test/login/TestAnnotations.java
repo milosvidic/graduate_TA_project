@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
+//@Test(groups = {"login"})
 public class TestAnnotations {
 	
 	private static WebDriver driver;
@@ -20,12 +21,14 @@ public class TestAnnotations {
 	HomePage homePage;
 	String message;
 	
-  @Test
+  @Test(groups = {"login"})
   public void NeuspesnoLogovanje(){
   System.out.println("Test: NeuspesnoLogovanje()");
+  System.out.println("Step: Invalid login.");
   loginPage.typeUsername("nenad");
   loginPage.typePassword(Property.password);
   loginPage.clickOnLoginButton();
+  System.out.println("Step: Verify unsuccessful login.");
   String errorMessage = loginPage.getErrorMessage();
 	  
 	assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
@@ -36,9 +39,11 @@ public class TestAnnotations {
   @Test(dependsOnMethods = "NeuspesnoLogovanje")
   public void NeuspesnoLogovanje1(){
   System.out.println("Test: NeuspesnoLogovanje1()");
+  System.out.println("Step: Invalid login.");
   loginPage.typeUsername(Property.username);
   loginPage.typePassword("fdsfad");
   loginPage.clickOnLoginButton();
+  System.out.println("Step: Verify unsuccessful login.");
   String errorMessage = loginPage.getErrorMessage();
 	  
 	assert errorMessage.contains("Invalid login") : "ERROR: You are logged in";
@@ -49,15 +54,21 @@ public class TestAnnotations {
 	  public void UspesnoLogovanje(){
 		
 	  
-		System.out.println("Test: UspesnoLogovanje");
-		  loginPage.typeUsername(Property.username);
-		  loginPage.typePassword(Property.password);
-		  homePage = loginPage.clickOnLoginButton();
-		  message = homePage.getTextFromLoginInfoLabel();
-		  System.out.println(message);
-			  
-			assert message.contains("You are logged in") : "ERROR: You are not logged in";
-			System.out.println("Test passed");
+		try {
+			System.out.println("Test: UspesnoLogovanje");
+			System.out.println("Step: Login.");
+			  loginPage.typeUsername(Property.username);
+			  loginPage.typePassword(Property.password);
+			  homePage = loginPage.clickOnLoginButton();
+			  System.out.println("Step: Verify successful login.");
+			  message = homePage.getTextFromLoginInfoLabel();
+			  System.out.println(message);
+				  
+				assert message.contains("You are logged in") : "ERROR: You are not logged in";
+				System.out.println("Test passed");
+		} catch (Exception e) {
+			
+		}
 	
 	}
 	  
@@ -72,7 +83,7 @@ public class TestAnnotations {
   public void afterMethod() {
   }
 
-  @BeforeClass
+  @BeforeClass(alwaysRun = true)
   public void beforeClass() {
 	  System.out.println("Before Class");
 	  driver = new FirefoxDriver();

@@ -6,15 +6,16 @@ import org.openqa.selenium.server.browserlaunchers.Sleeper;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EndavaInternalSystems {
+public class EndavaInternalSystems extends Page{
 	
 	@FindBy(className="no-overflow")
 	private WebElement categoryDescription;
 	
-	WebDriver driver;
+	//WebDriver driver;
 	public EndavaInternalSystems(WebDriver driver) {
-		this.driver=driver;
-		Sleeper.sleepTightInSeconds(2);
+		super(driver);
+		//this.driver=driver;
+		//Sleeper.sleepTightInSeconds(2);
 		PageFactory.initElements(driver, this);
 		
 	}
@@ -25,6 +26,7 @@ public class EndavaInternalSystems {
 	 * @return {String}
 	 */
 	public String getDescription(){
+		System.out.println("getDescription()");
 		return categoryDescription.getText();
 	}
 }

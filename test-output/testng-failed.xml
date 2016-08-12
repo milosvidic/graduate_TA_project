@@ -7,7 +7,6 @@
         <methods>
           <include name="beforeClass"/>
           <include name="test2"/>
-          <include name="afterClass"/>
           <include name="test1"/>
         </methods>
       </class> <!-- Test1.MyAccount -->

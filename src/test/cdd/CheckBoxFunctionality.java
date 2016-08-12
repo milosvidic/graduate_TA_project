@@ -28,11 +28,13 @@ public class CheckBoxFunctionality {
 	@Test
 	public void f() {
 
+		System.out.println("Step: Login.");
 		loginPage.typeUsername(Property.username);
 		loginPage.typePassword(Property.password);
 
 		homePage = loginPage.clickOnLoginButton();
 
+		System.out.println("Step: Verify successful login.");
 		message = homePage.getTextFromLoginInfoLabel();
 
 		System.out.println(message);
@@ -41,20 +43,29 @@ public class CheckBoxFunctionality {
 
 		System.out.println("test passed");
 
+		System.out.println("Step: Search app for 'career'.");
 		homePage.typeSearchValueIntoSearchField(Property.textCareer);
+
 		searchPage = homePage.clickOnGoButton();
+		
+		System.out.println("Step: Click on cdd link.");
 		cddPage = searchPage.clickOnCDDLink();
+		
+		System.out.println("Step: check first checkbox.");
 		cddPage.checkFirstCheskBox();
 		
 		isChecked = true;
 		
+		System.out.println("Step: Log out.");
 		loginPage = cddPage.clickOnLogOutLink();
 
+		System.out.println("Step: Login.");
 		loginPage.typeUsername(Property.username);
 		loginPage.typePassword(Property.password);
 
 		homePage = loginPage.clickOnLoginButton();
 
+		System.out.println("Step: Verify successful login.");
 		message = homePage.getTextFromLoginInfoLabel();
 
 		System.out.println(message);
@@ -62,15 +73,22 @@ public class CheckBoxFunctionality {
 		assert message.contains("You are logged in as") : "You are not logged in.";
 
 		System.out.println("test passed");
-
+        
+		System.out.println("Step: Search app for 'career'.");
 		homePage.typeSearchValueIntoSearchField(Property.textCareer);
 		searchPage = homePage.clickOnGoButton();
+		
+		System.out.println("Step: Click on cdd link.");
 		cddPage = searchPage.clickOnCDDLink();
 		// cddPage.checkFirstCheskBox();
 
+		System.out.println("Step: Verify checkbox is checked.");
 		assert cddPage.isFirstCheckBoxSelected() : "Check box should be selected";
+		
+		System.out.println("Step: Log out.");
 		loginPage = cddPage.clickOnLogOutLink();
 		System.out.println("Test passed");
+		b = true;
 
 	}
 
@@ -92,7 +110,7 @@ public class CheckBoxFunctionality {
 
 	@AfterClass
 	public void afterClass() {
-		
+		System.out.println("AfterClass: Kill the driver.");
 		driver.quit();
 		driver = new FirefoxDriver();
 		loginPage = new LoginPage(driver);
@@ -122,6 +140,11 @@ public class CheckBoxFunctionality {
 		driver.quit();
     }
 	
+    if (b) {
+		System.out.println("Test passed");
+	} else {
+		System.out.println("Test failed");
+	}
 	}
 
 }

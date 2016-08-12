@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29690" started-at="2016-08-10T07:56:51Z" finished-at="2016-08-10T07:57:20Z">
+  <suite name="Default suite" duration-ms="27243" started-at="2016-08-12T12:24:11Z" finished-at="2016-08-12T12:24:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29690" started-at="2016-08-10T07:56:51Z" finished-at="2016-08-10T07:57:20Z">
+    <test name="Default test" duration-ms="27243" started-at="2016-08-12T12:24:11Z" finished-at="2016-08-12T12:24:38Z">
       <class name="Test1.MyAccount">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="beforeClass" is-config="true" duration-ms="20328" started-at="2016-08-10T09:56:51Z" finished-at="2016-08-10T09:57:11Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="beforeClass" is-config="true" duration-ms="17786" started-at="2016-08-12T14:24:11Z" finished-at="2016-08-12T14:24:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="test2" duration-ms="216" started-at="2016-08-10T09:57:11Z" finished-at="2016-08-10T09:57:11Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="test2" duration-ms="235" started-at="2016-08-12T14:24:28Z" finished-at="2016-08-12T14:24:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="test1" duration-ms="46" started-at="2016-08-10T09:57:11Z" depends-on-methods="Test1.MyAccount.test2" finished-at="2016-08-10T09:57:11Z">
+        <test-method status="PASS" signature="test1()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="test1" duration-ms="79" started-at="2016-08-12T14:24:29Z" depends-on-methods="Test1.MyAccount.test2" finished-at="2016-08-12T14:24:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="afterClass" is-config="true" duration-ms="9059" started-at="2016-08-10T09:57:11Z" finished-at="2016-08-10T09:57:20Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:Test1.MyAccount@6d8a00e3]" name="afterClass" is-config="true" duration-ms="9110" started-at="2016-08-12T14:24:29Z" finished-at="2016-08-12T14:24:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
