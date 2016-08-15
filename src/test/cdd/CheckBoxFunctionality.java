@@ -7,6 +7,7 @@ import lib.pages.CDDPage;
 import lib.pages.HomePage;
 import lib.pages.LoginPage;
 import lib.pages.SearchResultPage;
+import lib.util.Prepare;
 
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
@@ -104,6 +105,7 @@ public class CheckBoxFunctionality {
 	public void beforeClass() {
 
 		driver = new FirefoxDriver();
+		
 		
 		loginPage = new LoginPage(driver);
 	}
